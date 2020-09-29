@@ -32,7 +32,8 @@
     "test": "CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build-pages",
-    "deploy": "push-dir --dir=build --branch=gh-pages"
+    "deploy": "push-dir --dir=build --branch=gh-pages",
+    "prepare": "npm run build"
   },
   "files": [
     "dist/carousel.js"

@@ -267,11 +267,13 @@ class Carousel extends React.Component {
   }
 
   updateFrameSize (cb) {
-    const { width, height } = window.getComputedStyle(this.refs.wrapper)
-    this.setState({
-      frameWidth: parseFloat(width.split('px')[0]),
-      frameHeight: parseFloat(height.split('px')[0])
-    }, cb)
+    if (this.refs.wrapper) {
+      const { width, height } = window.getComputedStyle(this.refs.wrapper)
+      this.setState({
+        frameWidth: parseFloat(width.split('px')[0]),
+        frameHeight: parseFloat(height.split('px')[0])
+      }, cb)
+    }
   }
 
   getSiblingFrames () {
